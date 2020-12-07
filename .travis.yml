@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.8"
+  - "3.7"
 
 services:
   - docker
@@ -8,4 +8,4 @@ services:
 before_install:
 
 script:
-  - docker-compose run api python manage.py test && flake8
+  - docker-compose run api "python manage.py test && flake8"
