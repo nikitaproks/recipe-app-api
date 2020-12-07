@@ -6,6 +6,7 @@ services:
   - docker
 
 before_install:
+  - pip install -r api/requirements.txt
   - docker-compose build
 script:
-  - docker-compose run api python manage.py test && flake8
+  - docker-compose run api sh -c "python manage.py test && flake8"
