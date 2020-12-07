@@ -9,4 +9,4 @@ before_install:
   - docker build -t nikitaproks/django-test -f ./api/Dockerfile ./api
 
 script:
-  - docker run -e CI=true nikitaproks/react-test python manage.py test && flake8
+  - docker run -e CI=true nikitaproks/django-test python manage.py test && flake8
