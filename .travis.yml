@@ -6,10 +6,6 @@ services:
   - docker
 
 before_install:
-  - pip install -r api/requirements.txt
-  #- docker-compose build
-  - docker build -t nikitaproks/django-test -f ./api/Dockerfile ./api
+  - docker-compose build
 script:
-  - docker run -e CI=true nikitaproks/django-test python manage.py test && flake8
-#script:
-#- docker-compose run api sh -c "python manage.py test && flake8"
+  - docker-compose run api "python manage.py test && flake8"
